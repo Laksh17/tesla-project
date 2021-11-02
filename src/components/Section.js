@@ -50,6 +50,9 @@ const ItemText = styled.div`
     padding-top: 15vh;
     text-align: center;
     font-size: 20px;
+    h1, p{
+        padding: 10px;
+    }
 `
 const ButtonGroup = styled.div`
     display: flex;
