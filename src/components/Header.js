@@ -31,6 +31,8 @@ function Header() {
                 {cars && cars.map((car, index) => (
                     <li key={index}><a href="#">{car}</a></li>
                 ))}
+                <li class="nav-optional"><a href="#">Tesla Account</a></li>
+                <li class="nav-optional"><a href="#">Shop</a></li>
                 <li><a href="#">Existing Inventory</a></li>
                 <li><a href="#">Used Inventory</a></li>
                 <li><a href="#">Trade-In</a></li>
@@ -79,6 +81,11 @@ const RightMenu = styled.div`
         margin-right: 10px;
         flex-wrap: nowrap;
     }
+    @media (max-width: 400px){
+       a{
+          display: none;
+        }
+    }
 `
 
 const CustomMenu = styled(MenuIcon)`
@@ -100,13 +107,19 @@ const BurgerNav = styled.div`
     transform: ${props => props.show ? 'translateX(0)' : 'translateX(100%)'};
     transition: transform 0.3s ease-in-out;
     li{
-    padding: 15px 0;
-    border-bottom: 1px groove #321321;
+        padding: 15px 0;
+        border-bottom: 1px groove #321321;
 
         a{
-        font-weight: 600;
+            font-weight: 600;
+        }
     }
-}
+
+    @media (min-width: 400px){
+        li.nav-optional{
+            display: none;
+        }
+    }
 `
 const CloseWrapper = styled.div`
 display: flex;
